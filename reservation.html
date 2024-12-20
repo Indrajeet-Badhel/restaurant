@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Table Reservation</title>
+</head>
+<body>
+  <header class="reservation-header">
+    <h1 class="reservation-title">Reserve Your Table</h1>
+    <p class="reservation-description">Book your table and order your menu early for a smooth dining experience.</p>
+  </header>
+
+  <section class="reservation-form-container">
+    <form id="reservation-form" class="reservation-form">
+      <div class="reservation-input-group">
+        <label for="customer-name">Name</label>
+        <input type="text" id="customer-name" class="reservation-input" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="reservation-input-group">
+        <label for="num-seats">Seats</label>
+        <input type="number" id="num-seats" class="reservation-input" placeholder="Number of seats" required min="1">
+      </div>
+
+      <div class="reservation-input-group">
+        <label for="reservation-date">Date</label>
+        <input type="date" id="reservation-date" class="reservation-input" required>
+      </div>
+
+      <div class="reservation-input-group">
+        <label for="reservation-time">Time</label>
+        <input type="time" id="reservation-time" class="reservation-input" required>
+      </div>
+
+      <div class="reservation-input-group">
+        <label for="customer-phone">Phone Number</label>
+        <input type="tel" id="customer-phone" class="reservation-input" placeholder="Enter your phone number" required>
+      </div>
+
+      <div class="reservation-input-group">
+        <label for="special-instructions">Special Instructions</label>
+        <textarea id="special-instructions" class="reservation-input" placeholder="Any special requests?" rows="4"></textarea>
+      </div>
+
+      <div class="reservation-buttons">
+        <button type="submit" class="btn-confirm">Confirm Reservation</button>
+        <button type="button" class="btn-menu" onclick="window.location.href='menu.html'">Book Your Menu</button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <a href="index.html" class="home-btn">Back to Home</a>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

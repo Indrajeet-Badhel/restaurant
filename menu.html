@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Our Menu</title>
+</head>
+<body>
+  <header>
+    <h1>Our Menu</h1>
+  </header>
+
+  <div class="menu-grid" id="menu-items">
+    <!-- Paneer Tikka -->
+    <div class="menu-item">
+      <img src="paneer-tikka.jpg" alt="Paneer Tikka">
+      <p>Paneer Tikka</p>
+      <button onclick="addToCart('Paneer Tikka', 200, 0)">Add</button>
+      <span class="item-count" id="item-count-0">0</span>
+    </div>
+    
+    <!-- Veg Biryani -->
+    <div class="menu-item">
+      <img src="veg-biryani.jpg" alt="Veg Biryani">
+      <p>Veg Biryani</p>
+      <button onclick="addToCart('Veg Biryani', 150, 1)">Add</button>
+      <span class="item-count" id="item-count-1">0</span>
+    </div>
+    
+    <!-- Pizza -->
+    <div class="menu-item">
+      <img src="pizza.jpg" alt="Pizza">
+      <p>Pizza</p>
+      <button onclick="addToCart('Pizza', 300, 2)">Add</button>
+      <span class="item-count" id="item-count-2">0</span>
+    </div>
+    
+    <!-- Salad -->
+    <div class="menu-item">
+      <img src="dish3.jpg" alt="Salad">
+      <p>Salad</p>
+      <button onclick="addToCart('Salad', 100, 3)">Add</button>
+      <span class="item-count" id="item-count-3">0</span>
+    </div>
+    
+    <!-- Pasta -->
+    <div class="menu-item">
+      <img src="dish1.jpg" alt="Pasta">
+      <p>Pasta</p>
+      <button onclick="addToCart('Pasta', 250, 4)">Add</button>
+      <span class="item-count" id="item-count-4">0</span>
+    </div>
+    
+    <!-- Sushi -->
+    <div class="menu-item">
+      <img src="sushi.jpg" alt="Sushi">
+      <p>Sushi</p>
+      <button onclick="addToCart('Sushi', 350, 5)">Add</button>
+      <span class="item-count" id="item-count-5">0</span>
+    </div>
+
+    <!-- Burger -->
+    <div class="menu-item">
+      <img src="burger.jpg" alt="Burger">
+      <p>Burger</p>
+      <button onclick="addToCart('Burger', 120, 6)">Add</button>
+      <span class="item-count" id="item-count-6">0</span>
+    </div>
+  </div>
+
+  <!-- Move Forward Button -->
+  <div style="text-align: right; margin-top: 20px;">
+    <a href="checkout.html" class="move-forward-btn">
+      Move Forward
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10.828 8L5.818 3.318a.5.5 0 1 1 .707-.707l5.303 5.303a.5.5 0 0 1 0 .707l-5.303 5.303a.5.5 0 0 1-.707-.707L10.828 8z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function addToCart(item, price, index) {
+      const existingItem = cart.find(cartItem => cartItem.name === item);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name: item, price, quantity: 1 });
+      }
+      updateItemCount(index);
+    }
+
+    function updateItemCount(index) {
+      document.getElementById(`item-count-${index}`).textContent = cart.find(cartItem => cartItem.name === document.getElementById(`item-count-${index}`).parentNode.querySelector('p').textContent).quantity;
+    }
+
+    // Store the cart in localStorage and pass it to checkout
+    function moveToCheckout() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'checkout.html';
+    }
+  </script>
+</body>
+</html>

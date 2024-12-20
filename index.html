@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GENS RESTRO</title>
+    <link rel="stylesheet" href="styles.css">
+    <style> .btn{
+        background-color: hsl(13, 86%, 70%);
+    }</style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <!-- Logo -->
+
+        <div class="container">
+          <nav class="navbar">
+          <img src="logo.png" alt="Logo" class="logo">
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+              <li><a href="#home"><b>Home</b></a></li>
+              <li><a href="menu.html"><b>Menu</b></a></li>
+              
+              <li><a href="ChefAI.html"><b>ChefAI</b></a></li>
+              <li><a href="#contact"><b>Contact</b></a></li>
+              <li><a href="#about"><b>about</b></a></li>
+            </ul>
+            
+            <!-- Button for Reserving a Table -->
+            <a href="login.html" class="btn"><b>Login→</b></a>
+
+          </nav>
+          
+          <!-- Header Content -->
+          <div class="header-content">
+          <h1><b>Discover the best food & drinks</b></h1>
+            
+            <div class="search-container">
+                <input type="text" placeholder="Search for dishes, menus, or specials..." class="search-bar">
+                <button class="search-button">Search</button>
+             
+            
+          </div>
+        </div>
+        
+      </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="text-container">
+            <h1>&nbsp;&nbsp;"Spicing Up Your Dining Experience"</h1>
+            <p>&nbsp;&nbsp;Reserve Your Table Now</p>
+            <a href="reservation.html">
+                <button class="btn">Reservation</button>
+              </a>
+              
+        </div>
+        <div class="image-container">
+            <img src="dining.jpg" alt="Restaurant View">
+        </div>
+        
+    </section>
+ 
+
+<!-- Menu Section -->
+<section id="menu" class="menu-container">
+    <div class="menu-wrapper">
+        <h2>Our Special Menu</h2>
+        <button id="prev" class="arrow">←</button>
+        <div class="menu-items" id="menu-items">
+            <!-- Visible Items -->
+            <div class="menu-item">
+                <img src="dish1.jpg" alt="Dish 1">
+                <h3>Pasta</h3>
+                <p>$12</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish2.jpg" alt="Dish 2">
+                <h3>Pizza</h3>
+                <p>$15</p>
+            </div>
+            <div class="menu-item">
+                <img src="dish3.jpg" alt="Dish 3">
+                <h3>Salad</h3>
+                <p>$10</p>
+            </div>
+            <!-- Hidden Items -->
+            <div class="menu-item">
+                <img src="sushi.jpg" alt="Sushi">
+                <h3>Sushi</h3>
+                <p>$12</p>
+            </div>
+            <div class="menu-item">
+                <img src="burger.jpg" alt="Burger">
+                <h3>Burger</h3>
+                <p>$15</p>
+            </div>
+            <div class="menu-item">
+                <img src="biryani.jpg" alt="Biryani">
+                <h3>Biryani</h3>
+                <p>$10</p>
+            </div>
+        </div>
+        <button id="next" class="arrow">→</button>
+    </div>
+</section>
+
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <h2> login </h2>
+            <form id="reservationForm">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="date" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Eatery Cafe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

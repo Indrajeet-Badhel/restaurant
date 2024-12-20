@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Chef AI</h1>
+  <div class="chef-ai">
+    <input type="text" id="ai-input" placeholder="What do you want?" />
+    <button onclick="processRequest()">Ask Chef AI</button>
+    <p id="ai-response"></p>
+  </div>
+  
+  <div id="ai-response"></div>
+  <button onclick="moveToCheckout()">Move Ahead ➡️</button>
+
+  <script>
+    function processRequest() {
+      const input = document.getElementById('ai-input').value;
+      // Simulate AI response
+      document.getElementById('ai-response').innerText = `Chef AI recommends: ${input}`;
+    }
+
+    function moveToCheckout() {
+      window.location.href = 'Checkout.html';
+    }
+  </script>
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+

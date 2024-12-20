@@ -1,0 +1,726 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+h1, h2 {
+    text-align: top;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Default button styling */
+.nav-links li a, .btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    position: relative;
+    font-weight: bold;
+    color: #ffffff; /* White text for better readability */
+    background: rgb(239, 235, 233); /* Warm orange color matching the image */
+    border-radius: 5px;
+    overflow: hidden; /* Prevent animation overflow */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover effect text color change */
+.nav-links li a:hover, .btn:hover {
+    color: #000000; /* Switch text to black for contrast */
+}
+
+/* Neon border animation */
+.nav-links li a::before, .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, transparent, #ffe259, #ff6f3c, #ffe259, transparent);
+    background-size: 300%; /* Wide enough for smooth movement */
+    z-index: 1;
+    pointer-events: none; /* Avoid blocking interactions */
+    animation: neon-line 2s infinite linear; /* Continuous neon effect */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the neon border on hover */
+.nav-links li a:hover::before, .btn:hover::before {
+    opacity: 1;
+}
+
+
+
+/* Animation for moving neon line */
+@keyframes neon-line {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 300% 0%;
+    }
+}
+
+  .nav-links li a:hover::before {
+    content: '';
+    position: absolute;
+  }
+  
+
+.text-container {
+    position: relative;
+    top: -20px; /* Adjust these values for precise placement */
+    left: 50px;
+    text-align: left; /* Align text to the right */
+    padding-left: 10px; /* Add padding if necessary to prevent shrinking */
+    margin-left: 10px; /* Adjust if needed to balance layout */
+}
+
+
+.image-container img{
+    float: right; /* Place image to the extreme right */
+    width: 18%; /* Resize image as needed */
+    border-radius: 25px;
+    margin-top: -160px;
+}
+
+
+.btn:hover {
+    background: #d62828;
+}
+
+/* Header Section */
+.header {
+    background: url('background2.jpg');
+    background-size: 100%; /* Ensure images fill the area properly */
+    background-position: 0 0, 100% 0; /* Start with background1 fully visible */
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0%;
+    position: relative;
+ /* Animate background images */ 
+    
+}/* Menu Section */
+.menu-grid {
+    display: flex;
+    flex-wrap: wrap; /* This ensures the items wrap to the next line */
+    justify-content: space-between; /* Space out the items evenly */
+    gap: 20px; /* Space between items */
+    margin: 40px auto; /* Center the grid and add top-bottom margin */
+    max-width: 1200px; /* Optional: Limit the max width of the grid */
+}
+
+/* Menu Item Styling */
+.menu-item {
+    background: #ffffff; /* Clean white background */
+    border: 2px solid #ddd; /* Light gray border for separation */
+    border-radius: 8px; /* Smooth corners */
+    width: 200px; /* Fixed width for consistency */
+    height: 250px; /* Adjusted height to fit content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Interactive cursor */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    border-color: #1e88e5; /* Highlight border on hover */
+}
+
+.menu-item img {
+    width: 100%; /* Make images fill the width of the container */
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images are not distorted */
+    border-radius: 4px;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    color: #666; /* Subtle gray for descriptions */
+    margin: 0;
+}
+
+.menu-item button {
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 6px; /* Added space between description and button */
+    transition: background-color 0.3s ease;
+}
+
+.menu-item button:hover {
+    background-color: #1565c0; /* Darker blue on hover */
+}
+
+/* Checkout Button Styling */
+.checkout-btn {
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkout-btn:hover {
+    background-color: #1565c0; /* Darker blue on hover */
+  }
+  
+  .cart {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart li {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .menu-grid {
+        justify-content: center; /* Center items on smaller screens */
+    }
+
+    .menu-item {
+        width: 150px; /* Adjust width for smaller screens */
+        height: 230px; /* Adjust height */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-item {
+        width: 100%; /* Full width for mobile screens */
+        height: auto; /* Allow auto height */
+    }
+}
+
+/* Background Animation (Move Left Effect) */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0 0, 100% 0; /* Start with the first image fully visible */
+    }
+    50% {
+        background-position: -100% 0, 0 0; /* Move the first image to the left, second image comes into view */
+    }
+    100% {
+        background-position: 0 0, 100% 0; /* Reset back to original positions */
+    }
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /*center horizontally */
+    position: relative;
+    top: -250px;/*adjust this value is lift it higher  */
+  }
+  
+  .search-bar {
+    width: 60%; /* Adjust width as needed */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .search-bar:focus {
+    border-color: #ff6347; /* Highlight color on focus */
+    box-shadow: 0 0 8px rgba(255, 99, 71, 0.6);
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    margin-left:10px;
+    font-size: 16px;
+    background-color: #ff6347; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .search-button:hover {
+    background-color: #ff4500; /* Darker shade on hover */
+  }
+
+/* Overlay to Improve Readability */
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darken the background */
+    z-index: -1; /* Ensure the overlay is behind the text */
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 250px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.header-content .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Navigation Bar */
+.navbar {
+    position:fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 96%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+/* Logo or brand */
+.logo {
+    position: absolute;
+    top: -18px;
+    left: 10px;
+    width: 100px;
+    height: auto;
+}
+
+/* Navigation Links */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #ff6f61;
+    color: white;
+}
+
+/* Login Button */
+.login-button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #ff4500;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+        .menu-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .arrow {
+            position: static;
+            transform: none;
+            margin: 10px;
+        }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* About Section */
+.about {
+    padding: 50px 0;
+    text-align: center;
+}
+/* Reservation Section */
+.reservation {
+    padding: 50px 0;
+    background:linear-gradient(45deg,#ff4e50,#f9d423);
+    color: white;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Menu Container */
+.menu-container {
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+    background: #f8f9fa;
+}
+
+/* Menu Wrapper */
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    font-size: 24px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 10; /* Ensure arrows are above the menu items */
+}
+
+#prev {
+    left: 0px;
+}
+
+#next {
+    right: 0px;
+}
+
+/* Menu Items */
+.menu-items {
+    display: flex;
+    overflow: hidden; /* This hides the items that are out of view */
+    transition: transform 0.3s ease-in-out;
+    width: 660px; /* Adjust this based on 3 items and their width (220px * 3) */
+    margin: 0 auto;}
+
+/* Individual Menu Item */
+.menu-item {
+    flex: 0 0 220px; /* Ensures each item takes 220px width */
+    margin: 0 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .arrow {
+        position: static;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, form button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 50%;
+}
+
+input[type="text"], input[type="email"], input[type="date"] {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(175, 165, 165, 0.01);
+    padding: 10px;
+    width: 80%;
+    margin: 10px 0;
+    
+}
+
+ form button {
+    background-color: #ff7f50;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+form button:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+/* Animation for login heading */
+h2 {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-20px); /* Moves the heading up slightly */
+    animation: fadeInMove 1.5s ease-in-out forwards;
+}
+
+/* Keyframes for the fade-in and move animation */
+@keyframes fadeInMove {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0.9px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 32px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+/* For Move Forward Button */
+.move-forward-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .move-forward-btn:hover {
+    background-color: #1565c0;
+    transform: translateX(5px); /* Slight slide effect on hover */
+  }
+  
+  .move-forward-btn svg {
+    margin-left: 10px;
+    fill: white;
+  }
+  /* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .reservation-header {
+    background-color: #FF6347; /* Tomato red color */
+    color: white;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .reservation-title {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  .reservation-description {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  /* Reservation Form Styles */
+  .reservation-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reservation-input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .reservation-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    resize: none;
+  }
+  
+  .reservation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .btn-confirm, .btn-menu {
+    width: 48%;
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-confirm {
+    background-color: #4CAF50; /* Green button for confirmation */
+    color: white;
+  }
+  
+  .btn-confirm:hover {
+    background-color: #45a049;
+  }
+  
+  .btn-menu {
+    background-color: #2196F3; /* Blue button for booking menu */
+    color: white;
+  }
+  
+  .btn-menu:hover {
+    background-color: #1976D2;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .home-btn {
+    background-color: #FF5722;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+  
+  .home-btn:hover {
+    background-color: #e64a19;
+  }
+  

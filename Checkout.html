@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Checkout</h1>
+  <div id="cart-items"></div>
+  <p id="total-price">Total: ₹0</p>
+  
+  <button onclick="checkout()">Checkout</button>
+
+  <script>
+    // Get cart and total price from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalPrice = parseInt(localStorage.getItem('totalPrice')) || 0;
+
+    // Display cart items
+    function displayCart() {
+      const cartItemsList = document.getElementById('cart-items');
+      cartItemsList.innerHTML = ''; // Clear previous content
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ₹${item.price} x ${item.quantity}`;
+        cartItemsList.appendChild(li);
+      });
+
+      // Display total price
+      document.getElementById('total-price').textContent = `Total: ₹${totalPrice}`;
+    }
+
+    // Checkout function
+    function checkout() {
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+      } else {
+        alert(`Checkout successful! Total: ₹${totalPrice}`);
+        // Clear cart and total from localStorage after checkout
+        localStorage.removeItem('cart');
+        localStorage.removeItem('totalPrice');
+        cart = [];
+        totalPrice = 0;
+        displayCart();
+      }
+    }
+
+    // Display cart on page load
+    document.addEventListener('DOMContentLoaded', displayCart);
+  </script>
+</body>
+</html>
