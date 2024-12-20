@@ -24,4 +24,4 @@ This is a dynamic and user-friendly restaurant website built using **HTML**, **C
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone <Indrajeet-Badhel/restaurant-website>
